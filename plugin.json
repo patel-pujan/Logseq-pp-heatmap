@@ -1,0 +1,6 @@
+{
+  "id": "pp-heatmap",
+  "name": "logseq-heatmap",
+  "description": "PP's Heatmap Extension",
+  "main": "dist/main.js"
+}
