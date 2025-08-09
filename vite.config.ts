@@ -1,16 +1,7 @@
-import { defineConfig } from "vite";
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react-swc'
 
+// https://vite.dev/config/
 export default defineConfig({
-  build: {
-    target: "esnext",
-    outDir: "dist",
-    emptyOutDir: true,
-    rollupOptions: {
-      input: "src/main.ts",
-      output: {
-        format: "es",
-        entryFileNames: "main.js",
-      },
-    },
-  },
-});
+  plugins: [react()],
+})
