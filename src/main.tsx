@@ -1,10 +1,24 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import "@logseq/libs";
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.tsx";
+// import HeatMap from "./HeatMap";
 
-createRoot(document.getElementById('root')!).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
+function main() {
+  console.log("Loading React");
+
+  // Option 1: Create a slash command
+  logseq.Editor.registerSlashCommand("Show Heatmap", async () => {
+    const div = document.createElement("div");
+    document.body.appendChild(div);
+
+    createRoot(div).render(
+      <StrictMode>
+        <App />
+      </StrictMode>,
+    );
+  });
+}
+
+logseq.ready(main).catch(console.error);
