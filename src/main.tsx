@@ -5,10 +5,9 @@ import "./index.css";
 import App from "./App.tsx";
 // import HeatMap from "./HeatMap";
 
-function main() {
+async function main() {
   console.log("Loading React");
 
-  // Option 1: Create a slash command
   logseq.Editor.registerSlashCommand("Show Heatmap", async () => {
     const div = document.createElement("div");
     document.body.appendChild(div);
